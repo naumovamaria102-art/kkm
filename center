@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>ККМ Центр — контрольно-кассовая техника и сервис</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Продажа контрольно-кассовой техники, онлайн-кассы, торговое оборудование и услуги центра технического обслуживания ККТ."
+  />
+  <style>
+    :root {
+      --accent: #2563eb;
+      --accent-soft: #e5efff;
+      --bg: #f5f5f7;
+      --bg-card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(245, 245, 247, 0.92);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 30% 30%, #60a5fa, #1d4ed8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    nav a:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .header-contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 13px;
+      gap: 2px;
+    }
+
+    .header-phone {
+      font-weight: 600;
+    }
+
+    .header-phone a {
+      color: var(--accent);
+    }
+
+    .burger {
+      display: none;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .burger span {
+      display: block;
+      height: 2px;
+      border-radius: 999px;
+      background: #111827;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 40px 0 56px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e5efff;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .hero-tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 480px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #111827;
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: #f3f4f6;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at 0 0, #eff6ff, #ffffff);
+      border-radius: var(--radius-lg);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(209, 213, 219, 0.6);
+    }
+
+    .hero-card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-card-label {
+      font-weight: 500;
+      color: #4b5563;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 40px 0;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* Services */
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 16px 16px 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .card-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #1d4ed8;
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .card-text {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .card-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    .card-link span {
+      font-size: 16px;
+    }
+
+    /* Product categories */
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    /* Two-column layout */
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .list-check {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      gap: 6px;
+      font-size: 14px;
+    }
+
+    .list-check li::before {
+      content: "•";
+      display: inline-block;
+      margin-right: 8px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Articles */
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .article-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+      font-size: 14px;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .article-card:hover {
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      transform: translateY(-1px);
+      border-color: rgba(37, 99, 235, 0.35);
+    }
+
+    .article-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .article-text {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .article-meta {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    /* Company */
+
+    .company-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 20px 18px;
+      font-size: 14px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.5fr) minmax(0, 2fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .company-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #4b5563;
+    }
+
+    /* Contacts */
+
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 24px;
+    }
+
+    .contacts-box {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 20px;
+      font-size: 14px;
+    }
+
+    .contacts-list {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      margin: 10px 0 14px;
+    }
+
+    .contacts-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #9ca3af;
+    }
+
+    .map-placeholder {
+      background: #e5e7eb;
+      border-radius: var(--radius-lg);
+      border: 1px dashed #d1d5db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #6b7280;
+      padding: 24px;
+    }
+
+    /* Form */
+
+    .form {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+      background: #f9fafb;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .form-checkbox input {
+      width: auto;
+      margin-top: 2px;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 18px 0 26px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(209, 213, 219, 0.7);
+      padding-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .products-grid,
+      .articles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .two-cols,
+      .contacts-grid,
+      .company-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav {
+        position: fixed;
+        inset: 56px 0 auto 0;
+        height: 0;
+        overflow: hidden;
+        background: rgba(245, 245, 247, 0.98);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 16px;
+        gap: 0;
+        border-bottom: 1px solid transparent;
+        transition: height 0.2s ease, border-color 0.2s ease;
+      }
+
+      nav.open {
+        height: 240px;
+        border-color: rgba(229, 231, 235, 0.9);
+      }
+
+      nav a {
+        padding: 10px 0;
+        width: 100%;
+      }
+
+      .burger {
+        display: flex;
+      }
+
+      .header-contacts {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cards-grid,
+      .products-grid,
+      .articles-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
+
+      .section-title {
+        font-size: 19px;
+      }
+
+      .hero-card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Шапка / навигация -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">К</div>
+        <div>
+          <div>ККМ Центр</div>
+          <div style="font-size: 11px; color: #6b7280">
+            Контрольно-кассовая техника и сервис
+          </div>
+        </div>
+      </div>
+
+      <nav id="main-nav">
+        <a href="#hero">Главная</a>
+        <a href="#about">О компании</a>
+        <a href="#kkt">ККТ и оборудование</a>
+        <a href="#service">Услуги ЦТО</a>
+        <a href="#articles">Полезные материалы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-contacts">
+        <div class="header-phone">
+          <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+        </div>
+        <div style="color: #6b7280">пн–пт 9:00–18:00</div>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-tag">
+          <span class="hero-tag-dot"></span>
+          Контрольно-кассовая техника, сервис и сопровождение
+        </div>
+        <h1 class="hero-title">
+          Онлайн-кассы и ККТ<br />
+          для вашего бизнеса с сервисом «под ключ»
+        </h1>
+        <p class="hero-subtitle">
+          Продажа, установка и обслуживание контрольно-кассовой техники,
+          торгового оборудования и программного обеспечения. Помогаем
+          подключиться к онлайн-кассам по&nbsp;54-ФЗ и работать без сбоев.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contacts" class="btn-primary">Оставить заявку на консультацию</a>
+          <a href="#kkt" class="btn-secondary">Подобрать онлайн-кассу</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Работаем с ИП и организациями</span>
+          <span>Помощь с регистрацией ККТ в ФНС и подключением к ОФД</span>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="hero-card-title">
+          Решения для магазинов, кафе, сервисов и онлайн-торговли
+        </div>
+        <div class="hero-card-grid">
+          <div>
+            <div class="hero-card-label">ККТ и оборудование</div>
+            <div>Онлайн-кассы, фискальные регистраторы, POS-системы, сканеры, принтеры чеков и этикеток.</div>
+          </div>
+          <div>
+            <div class="hero-card-label">Сервис и поддержка</div>
+            <div>Собственный центр техобслуживания (ЦТО), диагностика и ремонт, обучение персонала.</div>
+          </div>
+          <div>
+            <div class="hero-card-label">54-ФЗ «под ключ»</div>
+            <div>Подбор решения, регистрация ККТ в ФНС, подключение к ОФД, сопровождение.</div>
+          </div>
+          <div>
+            <div class="hero-card-label">Сопутствующие услуги</div>
+            <div>Настройка ПО, интеграция с учётными системами, поставка торгового и банковского оборудования.</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Основные услуги -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Услуги</div>
+        <h2 class="section-title">Что мы делаем для вашего бизнеса</h2>
+        <p class="section-subtitle">
+          Закрываем полный цикл работы с контрольно-кассовой техникой: от подбора
+          и продажи оборудования до сервиса, ремонта и сопровождения по 54-ФЗ.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-icon">ККТ</div>
+          <div class="card-title">Продажа ККТ и онлайн-касс</div>
+          <p class="card-text">
+            Подбираем кассовую технику под задачи вашего бизнеса: от небольших
+            торговых точек и кафе до сетей и интернет-магазинов.
+          </p>
+          <a href="#kkt" class="card-link">
+            Узнать больше <span>›</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">ЦТО</div>
+          <div class="card-title">Техническое обслуживание и ремонт</div>
+          <p class="card-text">
+            Центр технического обслуживания (ЦТО): плановое обслуживание,
+            диагностика, ремонт, замена фискальных накопителей.
+          </p>
+          <a href="#service" class="card-link">
+            Услуги ЦТО <span>›</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">54-ФЗ</div>
+          <div class="card-title">Регистрация ККТ и подключение к ОФД</div>
+          <p class="card-text">
+            Помогаем пройти все шаги по 54-ФЗ: регистрация кассы в ФНС,
+            настройка, передача данных в ОФД, обучение работе с онлайн-кассой.
+          </p>
+          <a href="#articles" class="card-link">
+            Полезные материалы <span>›</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">POS</div>
+          <div class="card-title">Торговое и банковское оборудование</div>
+          <p class="card-text">
+            Поставляем POS-системы, сканеры, принтеры, денежные ящики и другое
+            оборудование, помогаем интегрировать его с учётными системами.
+          </p>
+          <a href="#kkt" class="card-link">
+            Категории оборудования <span>›</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Категории ККТ и оборудования -->
+  <section id="kkt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Оборудование</div>
+        <h2 class="section-title">Контрольно-кассовая техника и торговое оборудование</h2>
+        <p class="section-subtitle">
+          Поставляем проверенные решения от ведущих производителей. Помогаем
+          выбрать оптимальную конфигурацию под формат торговли, поток клиентов
+          и требования законодательства.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <article class="card">
+          <div class="card-title">Онлайн-ККТ</div>
+          <p class="card-text">
+            Кассы для соответствия 54-ФЗ: стационарные и мобильные решения для
+            магазинов, кафе, выездной торговли и интернет-продаж.
+          </p>
+          <a href="#contacts" class="card-link">
+            Запросить подбор <span>›</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-title">Фискальные регистраторы</div>
+          <p class="card-text">
+            ФР для интеграции с учётными системами и ПО. Для супермаркетов,
+            аптек, АЗС и других торговых объектов с высокой нагрузкой.
+          </p>
+          <a href="#contacts" class="card-link">
+            Подобрать решение <span>›</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-title">POS-системы</div>
+          <p class="card-text">
+            Комплексные рабочие места кассира: моноблоки, системные блоки,
+            мониторы, периферия и программное обеспечение.
+          </p>
+          <a href="#contacts" class="card-link">
+            Узнать о вариантах <span>›</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-title">Сканеры штрих-кода</div>
+          <p class="card-text">
+            Ручные и стационарные сканеры для ускорения обслуживания и снижения
+            ошибок при пробитии товаров.
+          </p>
+          <a href="#contacts" class="card-link">
+            Получить консультацию <span>›</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-title">Принтеры чеков и этикеток</div>
+          <p class="card-text">
+            Термопринтеры и термотрансферные принтеры для печати чеков,
+            этикеток и штрих-кодов.
+          </p>
+          <a href="#contacts" class="card-link">
+            Подобрать модель <span>›</span>
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="card-title">Прочее торговое оборудование</div>
+          <p class="card-text">
+            Денежные ящики, дисплеи покупателя, банковские терминалы и другие
+            устройства для оснащения кассовой зоны.
+          </p>
+          <a href="#contacts" class="card-link">
+            Оставить запрос <span>›</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦТО и преимущества -->
+  <section id="service">
+    <div class="container two-cols">
+      <div>
+        <div class="section-header">
+          <div class="section-kicker">ЦТО</div>
+          <h2 class="section-title">Центр технического обслуживания ККТ</h2>
+          <p class="section-subtitle">
+            Обеспечиваем бесперебойную работу вашей кассовой техники. Берём на
+            себя всю рутину по обслуживанию и ремонту, чтобы вы могли
+            сосредоточиться на бизнесе.
+          </p>
+        </div>
+
+        <ul class="list-check">
+          <li>Диагностика и ремонт контрольно-кассовой техники и торгового оборудования.</li>
+          <li>Плановое обслуживание, замена фискальных накопителей, обновление прошивок.</li>
+          <li>Подготовка и настройка касс к работе, проверка корректности фискальных данных.</li>
+          <li>Сервисные договоры на обслуживание ККТ и оборудования с фиксированными сроками реагирования.</li>
+          <li>Консультации и обучение персонала работе с онлайн-кассами и ПО.</li>
+        </ul>
+
+        <div style="margin-top: 14px;">
+          <a href="#contacts" class="btn-primary">Оставить заявку на обслуживание</a>
+        </div>
+      </div>
+
+      <aside>
+        <div class="section-header" style="margin-bottom: 14px;">
+          <div class="section-kicker">Преимущества</div>
+          <h2 class="section-title">Почему клиенты выбирают нас</h2>
+        </div>
+        <ul class="list-check">
+          <li>Опыт работы с ККТ и торговым оборудованием, знание требований 54-ФЗ.</li>
+          <li>Собственный центр обслуживания и сертифицированные специалисты.</li>
+          <li>Официальные поставки от производителей кассовой техники.</li>
+          <li>Поддержка: телефон, удалённое подключение, выезд специалистов.</li>
+          <li>Комплексный подход: оборудование, ПО, регистрация, сопровождение.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Полезные материалы / статьи -->
+  <section id="articles">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Статьи</div>
+        <h2 class="section-title">Полезные материалы об онлайн-кассах и 54-ФЗ</h2>
+        <p class="section-subtitle">
+          Разбираем изменения законодательства, делимся рекомендациями по выбору
+          ККТ и рассказываем, как организовать работу кассового узла без штрафов
+          и простоев.
+        </p>
+      </div>
+
+      <div class="articles-grid">
+        <article class="article-card">
+          <div class="article-title">
+            Онлайн-касса по 54-ФЗ: как перейти с минимальными затратами
+          </div>
+          <p class="article-text">
+            Основные шаги по переходу на онлайн-кассы: выбор модели, регистрация
+            в ФНС, подключение к ОФД и настройка обмена данными.
+          </p>
+          <div class="article-meta">Обзор для владельцев малого бизнеса</div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-title">
+            Когда необходимо закрывать смену на онлайн-кассе
+          </div>
+          <p class="article-text">
+            Разбираем требования законодательства к закрытию смены, последствия
+            нарушений и практические рекомендации для продавцов и кассиров.
+          </p>
+          <div class="article-meta">Практические советы</div>
+        </article>
+
+        <article class="article-card">
+          <div class="article-title">
+            Как выбрать ККТ для небольшого магазина или кафе
+          </div>
+          <p class="article-text">
+            На что обратить внимание при выборе модели: количество чеков, тип
+            торговли, интеграция с учётом, работа с номенклатурой и скидками.
+          </p>
+          <div class="article-meta">Рекомендации по выбору</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- О компании -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">О компании</div>
+        <h2 class="section-title">Компания «ККМ Центр»</h2>
+      </div>
+
+      <div class="company-card">
+        <div>
+          <p style="margin-bottom: 10px;">
+            «ККМ Центр» занимается поставкой контрольно-кассовой техники,
+            торгового оборудования и программного обеспечения, а также
+            обслуживанием ККТ и сопровождением по 54-ФЗ. Мы работаем с малым и
+            средним бизнесом, торговыми сетями, сервисными предприятиями и
+            онлайн-проектами.
+          </p>
+          <p style="margin-bottom: 10px;">
+            Наша задача — обеспечить надёжную работу кассовой инфраструктуры,
+            соблюдение требований законодательства и удобство работы персонала.
+            Предлагаем комплексные решения: от подбора и продажи оборудования до
+            сервисного обслуживания и консультаций.
+          </p>
+          <div class="company-badges">
+            <span class="badge">Опыт работы с ККТ</span>
+            <span class="badge">Собственный ЦТО</span>
+            <span class="badge">Официальные поставки</span>
+            <span class="badge">Поддержка и обучение</span>
+          </div>
+        </div>
+        <div>
+          <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">
+            Здесь можно разместить логотипы производителей, лицензии,
+            сертификаты и другую подтверждающую информацию. В Tilda этот блок
+            легко заменить на галерею или сетку из логотипов.
+          </p>
+          <div class="map-placeholder" style="height: 140px;">
+            Блок под логотипы партнёров, сертификаты или дополнительную
+            информацию о компании
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты и форма -->
+  <section id="contacts">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Контакты</div>
+        <h2 class="section-title">Свяжитесь с нами</h2>
+        <p class="section-subtitle">
+          Оставьте заявку, и мы поможем подобрать контрольно-кассовую технику и
+          оборудование под задачи вашего бизнеса, а также расскажем о вариантах
+          обслуживания.
+        </p>
+      </div>
+
+      <div class="contacts-grid">
+        <div class="contacts-box">
+          <div class="contacts-label">Реквизиты и контактная информация</div>
+          <ul class="contacts-list">
+            <li><strong>Компания:</strong> ООО «ККМ Центр» (условное наименование)</li>
+            <li><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 1</li>
+            <li><strong>Телефон:</strong> <a href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+            <li><strong>Email:</strong> <a href="mailto:info@kkmcenter.ru">info@kkmcenter.ru</a></li>
+          </ul>
+          <div class="map-placeholder">
+            Здесь можно встроить карту (Яндекс.Карты) с указанием офиса и схемой
+            проезда
+          </div>
+        </div>
+
+        <div class="contacts-box">
+          <div class="contacts-label">Форма обратной связи</div>
+          <!-- В Tilda сюда можно вставить родную форму и сохранить поля -->
+          <form class="form">
+            <div class="form-row">
+              <div>
+                <label for="name">Имя</label>
+                <input id="name" type="text" placeholder="Иван Иванов" />
+              </div>
+              <div>
+                <label for="phone">Телефон</label>
+                <input id="phone" type="tel" placeholder="+7 (___) ___-__-__" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="example@mail.ru" />
+              </div>
+              <div>
+                <label for="topic">Что вас интересует</label>
+                <input id="topic" type="text" placeholder="Подбор ККТ, сервис, консультация..." />
+              </div>
+            </div>
+
+            <div>
+              <label for="comment">Комментарий</label>
+              <textarea
+                id="comment"
+                placeholder="Кратко опишите ваш бизнес и задачу, чтобы мы подготовили предложение."
+              ></textarea>
+            </div>
+
+            <div class="form-checkbox">
+              <input id="consent" type="checkbox" />
+              <label for="consent">
+                Я согласен(на) на обработку персональных данных и получение
+                обратной связи от компании «ККМ Центр».
+              </label>
+            </div>
+
+            <div style="margin-top: 6px;">
+              <button type="submit" class="btn-primary">
+                Отправить заявку
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© 20XX ООО «ККМ Центр». Все права защищены.</div>
+      <div>Контрольно-кассовая техника, оборудование, программное обеспечение и сопутствующие товары.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Простой бургер для мобильного меню
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("main-nav");
+
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  </script>
+</body>
+</html>
